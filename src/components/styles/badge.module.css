@@ -1,0 +1,32 @@
+.badge {
+  position: absolute;
+  width: auto;
+  min-width: 60px;
+  /* padding: 10px 20px; */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Nunito-Bold";
+  font-size: 14px;
+  transition: all 0.2s;
+  color: #333;
+  overflow: hidden;
+}
+
+.badge:hover {
+  box-shadow: 0 5px 20px #ccc;
+  cursor: pointer;
+}
+
+.badgeImage {
+  width: 25px;
+  height: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .badge {
+    display: none;
+  }
+}

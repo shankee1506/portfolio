@@ -1,0 +1,72 @@
+import { useInView } from 'framer-motion'
+import { useContext, useEffect, useRef } from 'react'
+import ContactItem from '../../../components/Contact'
+import NavigationContext from '../../../datamanager/context/navigationContext'
+import ThemeContext from '../../../datamanager/context/themeContext'
+import { getThemeColor } from '../../../utils/colors'
+import styles from '../styles/contactMe.module.css'
+
+const ContactMe = () => {
+  // Get data from the global state
+  const { navigateTo } = useContext(NavigationContext)
+  const { theme } = useContext(ThemeContext)
+
+  const contactMeRef = useRef()
+  const isInView = useInView(contactMeRef)
+
+  useEffect(() => {
+    if (isInView) {
+      navigateTo("contactMe")
+    }
+  }, [isInView])
+
+  return (
+    <section
+      ref={contactMeRef}
+      id="contactMe"
+      className={styles.contactMeSection}
+    >
+      <h1 
+        className={styles.contactMeHeading}
+        style={{
+          color: getThemeColor(theme).text
+        }}
+      >Contact Me</h1>
+
+      <h2 
+        className={styles.contactMeDescription}
+        style={{
+          color: getThemeColor(theme).lightText
+        }}  
+      >
+        You can use different way to contact me. Choose what you want.
+      </h2>
+
+      <section className={styles.contactMeContent}>
+        <div className={styles.contactMeFirstSection}>
+          <ContactItem
+            image="github.png"
+            text="@Shankeerthan"
+            link="https://github.com/shankee1506"
+          />
+          <ContactItem
+            image="linkedin.png"
+            text="@Shankeerthan"
+            link="https://www.linkedin.com/in/perananthan-shankeerthan-b22a14197/"
+          />
+        </div>
+
+        <div className={styles.contactMeSecondSection}>
+          <img
+            alt="contact me"
+            width="500px"
+            height="auto"
+            src={require(`../../../assets/images/contact-us.png`)}
+          />
+        </div>
+      </section>
+    </section>
+  )
+}
+
+export default ContactMe

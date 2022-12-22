@@ -1,0 +1,31 @@
+{
+  "projects": [
+    {
+      "name": "Shopping Cart",
+      "description": "A E-Commerce shopping cart using the react and redux toolkit",
+      "url": "https://shopping-carty.netlify.app/",
+      "users": [
+        {
+          "name": "Shankeerthan",
+          "email": "pshankeerthan@gmail.com"
+        }
+      ],
+      "technologies": [
+
+        {
+          "name": "React",
+          "image": "react.png"
+        },
+        {
+          "name": "Redux",
+          "image": "redux.png"
+        }
+      ],
+      "folder": "ShoppingCart",
+      "images": [
+        "shopping.png"
+
+      ]
+    }
+  ]
+}
